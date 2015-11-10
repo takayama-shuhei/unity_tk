@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Collections;
 
-public class Factin : MonoBehaviour
+public class FactinGenerator : MonoBehaviour
 {
 
     // すべてのMicroTubeに共通の設定になると思うので，
@@ -41,6 +41,8 @@ public class Factin : MonoBehaviour
 			var microTube = MicroTube.Instantiate(start, end);
             microTube.ApplyColor(color);
             microTube.ApplyWidth(width);
+            microTube.transform.SetParent(transform, false);
+            actin.Add(microTube);
 
 			/*
 				phi = i  / 18f * 3.14f;
